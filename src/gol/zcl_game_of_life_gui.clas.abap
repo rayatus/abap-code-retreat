@@ -19,8 +19,8 @@ CLASS zcl_game_of_life_gui IMPLEMENTATION.
 
 
 
-    DATA(cols) = 4.
-    DATA(rows) = 4.
+    DATA(cols) = 10.
+    DATA(rows) = 10.
 
 
     DATA(gol) = NEW zcl_game_of_life( ).
@@ -29,10 +29,11 @@ CLASS zcl_game_of_life_gui IMPLEMENTATION.
     gol->set_cell_status( col = 2 row = 1 status = abap_true ).
     gol->set_cell_status( col = 2 row = 2 status = abap_true ).
     gol->set_cell_status( col = 3 row = 2 status = abap_true ).
+    gol->set_cell_status( col = 3 row = 3 status = abap_true ).
 
     DATA(output) = cl_demo_output=>new( ).
 
-    DO 4 TIMES.
+    DO 10 TIMES.
 
       output->begin_section( |ABAP Game of Life : interation { sy-index }| )->line( ).
 
